@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solo &amp; Proud — The Art of Living Beautifully on Your Own</title>
+<meta name="description" content="A cozy, illustrated guide to living happily alone — cooking for one, home safety, money for solo life, and gentle self-care. Filter stories by how you feel right now." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#FBF5EC;
+    --cream-2:#F6ECDD;
+    --paper:#FFFDF9;
+    --peach:#FBD9B8;
+    --peach-soft:#FCE7D2;
+    --terracotta:#C97B53;
+    --terracotta-deep:#A85B38;
+    --rose:#D98E8A;
+    --rose-soft:#F3CFC8;
+    --dusty:#B97268;
+    --sage:#A7B59A;
+    --sage-soft:#D6E0CC;
+    --ink:#4A3B33;
+    --ink-soft:#776153;
+    --muted:#9A8678;
+    --shadow:rgba(168,91,56,0.16);
+    --shadow-soft:rgba(168,91,56,0.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Nunito',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* decorative dotted texture */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-1;
+    background-image:radial-gradient(var(--peach-soft) 1.4px, transparent 1.4px);
+    background-size:26px 26px;opacity:.5;
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,245,236,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:2px solid var(--peach-soft);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:900;font-size:1.32rem;color:var(--terracotta-deep);}
+  .logo .badge{width:38px;height:38px;border-radius:50%;background:var(--peach);display:grid;place-items:center;font-size:1.2rem;box-shadow:0 4px 10px var(--shadow-soft);}
+  .nav-links{display:flex;gap:26px;align-items:center;}
+  .nav-links a{color:var(--ink-soft);text-decoration:none;font-weight:700;font-size:.96rem;transition:color .3s ease;}
+  .nav-links a:hover{color:var(--terracotta);}
+  .nav-cta{background:var(--terracotta);color:#fff;padding:9px 18px;border-radius:30px;box-shadow:0 6px 14px var(--shadow);}
+  .nav-cta:hover{background:var(--terracotta-deep)!important;color:#fff!important;}
+  .burger{display:none;font-size:1.6rem;background:none;border:none;color:var(--terracotta-deep);cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:60px 0 40px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:var(--sage-soft);color:#5d6b4f;font-weight:800;font-size:.82rem;padding:7px 15px;border-radius:30px;letter-spacing:.4px;text-transform:uppercase;}
+  .hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.5rem,5.2vw,4rem);line-height:1.05;margin:18px 0 8px;color:var(--ink);}
+  .hero h1 .hl{color:var(--terracotta);position:relative;white-space:nowrap;}
+  .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:12px;background:var(--peach);z-index:-1;border-radius:6px;}
+  .hero p.lead{font-size:1.16rem;color:var(--ink-soft);max-width:520px;margin:14px 0 26px;}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{cursor:pointer;border:none;font-family:'Nunito';font-weight:800;font-size:1rem;padding:14px 26px;border-radius:32px;transition:transform .3s ease,box-shadow .3s ease,background .3s ease;text-decoration:none;display:inline-flex;align-items:center;gap:9px;}
+  .btn-primary{background:var(--terracotta);color:#fff;box-shadow:0 10px 22px var(--shadow);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 28px var(--shadow);background:var(--terracotta-deep);}
+  .btn-ghost{background:var(--paper);color:var(--terracotta-deep);border:2px solid var(--peach);}
+  .btn-ghost:hover{transform:translateY(-3px);background:var(--peach-soft);}
+  .hero-art{position:relative;}
+  .hero-art img{width:100%;border-radius:28px;box-shadow:0 24px 50px var(--shadow);border:6px solid var(--paper);}
+  .hero-art .float{position:absolute;background:var(--paper);border-radius:18px;padding:12px 16px;box-shadow:0 12px 26px var(--shadow-soft);font-weight:800;display:flex;align-items:center;gap:9px;font-size:.92rem;color:var(--ink);}
+  .float.f1{top:-16px;left:-14px;animation:bob 5s ease-in-out infinite;}
+  .float.f2{bottom:18px;right:-16px;animation:bob 4.2s ease-in-out infinite .6s;}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+  /* trust row */
+  .trust{display:flex;gap:30px;flex-wrap:wrap;margin-top:34px;}
+  .trust div{display:flex;flex-direction:column;}
+  .trust b{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--terracotta);line-height:1;}
+  .trust span{font-size:.85rem;color:var(--muted);font-weight:700;}
+
+  /* ---------- MOOD FILTER ---------- */
+  section{padding:64px 0;}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 40px;}
+  .sec-head .kicker{font-weight:800;color:var(--terracotta);text-transform:uppercase;letter-spacing:1.5px;font-size:.82rem;}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2rem,4vw,2.8rem);margin:8px 0 10px;color:var(--ink);}
+  .sec-head p{color:var(--ink-soft);font-size:1.05rem;}
+
+  .mood-bar{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:42px;}
+  .mood{
+    cursor:pointer;border:2px solid var(--peach-soft);background:var(--paper);
+    border-radius:22px;padding:16px 22px;display:flex;align-items:center;gap:12px;
+    transition:all .3s ease;min-width:200px;
+  }
+  .mood .emo{font-size:1.7rem;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--cream-2);transition:all .3s ease;}
+  .mood .txt{text-align:left;}
+  .mood .txt b{display:block;font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);}
+  .mood .txt small{color:var(--muted);font-weight:700;font-size:.8rem;}
+  .mood:hover{transform:translateY(-3px);box-shadow:0 12px 24px var(--shadow-soft);border-color:var(--peach);}
+  .mood.active{background:var(--terracotta);border-color:var(--terracotta);}
+  .mood.active .txt b,.mood.active .txt small{color:#fff;}
+  .mood.active .emo{background:rgba(255,255,255,.25);}
+
+  /* ---------- STORY CARDS ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .card{
+    background:var(--paper);border-radius:24px;overflow:hidden;
+    box-shadow:0 12px 30px var(--shadow-soft);border:2px solid #fff;
+    display:flex;flex-direction:column;
+    transition:transform .35s ease,box-shadow .35s ease,opacity .35s ease;
+    opacity:0;transform:translateY(24px);
+  }
+  .card.show{opacity:1;transform:translateY(0);}
+  .card:hover{transform:translateY(-8px);box-shadow:0 22px 44px var(--shadow);}
+  .card .ph{height:170px;position:relative;overflow:hidden;}
+  .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .card:hover .ph img{transform:scale(1.07);}
+  .card .tag{position:absolute;top:12px;left:12px;background:rgba(255,253,249,.92);color:var(--terracotta-deep);font-weight:800;font-size:.72rem;padding:6px 12px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;}
+  .card .body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1;}
+  .card .moodtag{display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:800;color:var(--sage);margin-bottom:8px;}
+  .card h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.28rem;color:var(--ink);margin-bottom:8px;line-height:1.25;}
+  .card p{color:var(--ink-soft);font-size:.96rem;flex:1;}
+  .card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1.5px dashed var(--peach-soft);}
+  .card .read{color:var(--terracotta);font-weight:800;font-size:.9rem;cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:gap .3s ease;}
+  .card:hover .read{gap:10px;}
+  .card .mins{color:var(--muted);font-size:.8rem;font-weight:700;}
+  .empty{grid-column:1/-1;text-align:center;padding:50px;color:var(--muted);font-weight:700;display:none;}
+
+  /* ---------- PILLARS ---------- */
+  .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .pillar{background:var(--paper);border-radius:22px;padding:26px 22px;text-align:center;border:2px solid var(--cream-2);transition:all .3s ease;}
+  .pillar:hover{transform:translateY(-6px);box-shadow:0 16px 32px var(--shadow-soft);border-color:var(--peach);}
+  .pillar .ic{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;margin:0 auto 14px;font-size:1.8rem;}
+  .pillar:nth-child(1) .ic{background:var(--peach-soft);}
+  .pillar:nth-child(2) .ic{background:var(--rose-soft);}
+  .pillar:nth-child(3) .ic{background:var(--sage-soft);}
+  .pillar:nth-child(4) .ic{background:var(--cream-2);}
+  .pillar h3{font-family:'Fraunces',serif;font-size:1.18rem;margin-bottom:7px;color:var(--ink);}
+  .pillar p{color:var(--ink-soft);font-size:.92rem;}
+
+  /* ---------- BANNER QUOTE ---------- */
+  .quote-band{background:var(--terracotta);border-radius:32px;padding:54px 40px;text-align:center;color:#fff;position:relative;overflow:hidden;margin:10px 0;}
+  .quote-band::before{content:"\201C";position:absolute;top:-30px;left:30px;font-family:'Fraunces',serif;font-size:14rem;color:rgba(255,255,255,.13);line-height:1;}
+  .quote-band p{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.4rem,3vw,2rem);max-width:780px;margin:0 auto 14px;position:relative;line-height:1.35;}
+  .quote-band span{font-weight:700;opacity:.85;}
+
+  /* ---------- DAILY RITUAL / CHECKLIST ---------- */
+  .ritual-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:46px;align-items:center;}
+  .ritual-art img{width:100%;border-radius:26px;box-shadow:0 20px 44px var(--shadow);border:6px solid var(--paper);}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:18px;}
+  .checklist li{background:var(--paper);border:2px solid var(--cream-2);border-radius:16px;padding:14px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all .3s ease;font-weight:700;color:var(--ink);}
+  .checklist li:hover{border-color:var(--peach);transform:translateX(4px);}
+  .checklist .box{width:26px;height:26px;border-radius:8px;border:2.5px solid var(--peach);display:grid;place-items:center;flex-shrink:0;transition:all .3s ease;color:#fff;font-size:.95rem;}
+  .checklist li.done .box{background:var(--sage);border-color:var(--sage);}
+  .checklist li.done{opacity:.6;text-decoration:line-through;text-decoration-color:var(--muted);}
+  .progress-wrap{margin-top:20px;background:var(--cream-2);border-radius:20px;height:14px;overflow:hidden;}
+  .progress-bar{height:100%;width:0;background:var(--terracotta);border-radius:20px;transition:width .5s ease;}
+  .progress-label{font-weight:800;color:var(--terracotta-deep);margin-top:10px;font-size:.95rem;}
+
+  /* ---------- NEWSLETTER ---------- */
+  .news{background:var(--paper);border-radius:32px;padding:50px 40px;text-align:center;border:2px solid var(--peach-soft);box-shadow:0 16px 40px var(--shadow-soft);}
+  .news h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.5rem);color:var(--ink);margin-bottom:8px;}
+  .news p{color:var(--ink-soft);max-width:480px;margin:0 auto 26px;}
+  .news form{display:flex;gap:12px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+  .news input{flex:1;min-width:210px;padding:14px 18px;border-radius:30px;border:2px solid var(--peach-soft);background:var(--cream);font-family:'Nunito';font-size:1rem;color:var(--ink);outline:none;transition:border .3s ease;}
+  .news input:focus{border-color:var(--terracotta);}
+  .news .ok{color:var(--sage);font-weight:800;margin-top:14px;display:none;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:var(--cream);padding:54px 0 26px;margin-top:30px;}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;}
+  .foot-grid .logo{color:var(--peach);}
+  .foot-grid p{color:#d9c8ba;font-size:.95rem;margin-top:12px;max-width:280px;}
+  .foot-col h4{font-family:'Fraunces',serif;font-size:1.05rem;margin-bottom:14px;color:#fff;}
+  .foot-col a{display:block;color:#cbb6a6;text-decoration:none;font-size:.92rem;margin-bottom:9px;transition:color .3s ease;font-weight:600;}
+  .foot-col a:hover{color:var(--peach);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;text-align:center;color:#bba797;font-size:.85rem;}
+
+  /* ---------- ARTICLE READER MODAL ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;z-index:100;display:none;
+    background:rgba(74,59,51,.55);backdrop-filter:blur(6px);
+    padding:30px 20px;overflow-y:auto;
+  }
+  .modal-overlay.open{display:flex;align-items:flex-start;justify-content:center;animation:fadeIn .3s ease;}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  .modal{
+    background:var(--paper);max-width:760px;width:100%;border-radius:30px;
+    overflow:hidden;box-shadow:0 40px 90px rgba(74,59,51,.4);border:5px solid #fff;
+    margin:auto;animation:popIn .4s cubic-bezier(.2,.8,.3,1.1);position:relative;
+  }
+  @keyframes popIn{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .modal-hero{position:relative;height:240px;overflow:hidden;}
+  .modal-hero img{width:100%;height:100%;object-fit:cover;}
+  .modal-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(74,59,51,.45),transparent 55%);}
+  .modal-close{
+    position:absolute;top:16px;right:16px;z-index:3;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,253,249,.94);border:none;cursor:pointer;font-size:1.3rem;color:var(--terracotta-deep);
+    display:grid;place-items:center;box-shadow:0 6px 16px var(--shadow);transition:all .3s ease;
+  }
+  .modal-close:hover{background:var(--terracotta);color:#fff;transform:rotate(90deg);}
+  .modal-meta{position:absolute;left:24px;bottom:18px;z-index:2;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .modal-meta .m-tag{background:var(--peach);color:var(--terracotta-deep);font-weight:800;font-size:.74rem;padding:6px 13px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;}
+  .modal-meta .m-mins{background:rgba(255,253,249,.92);color:var(--ink-soft);font-weight:800;font-size:.74rem;padding:6px 13px;border-radius:20px;}
+  .modal-body{padding:30px 40px 40px;}
+  .modal-body .m-mood{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:800;color:var(--sage);margin-bottom:10px;}
+  .modal-body h2.m-title{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.6rem,3.2vw,2.2rem);color:var(--ink);line-height:1.2;margin-bottom:18px;}
+  .modal-body .article p{color:var(--ink-soft);font-size:1.04rem;line-height:1.8;margin-bottom:16px;}
+  .modal-body .article h3{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;color:var(--terracotta-deep);margin:24px 0 10px;}
+  .modal-body .article ul{margin:0 0 18px;padding-left:6px;list-style:none;}
+  .modal-body .article ul li{position:relative;padding-left:30px;margin-bottom:11px;color:var(--ink-soft);font-size:1.02rem;line-height:1.7;}
+  .modal-body .article ul li::before{content:"\1F33F";position:absolute;left:0;top:1px;font-size:1rem;}
+  .modal-body .article blockquote{
+    background:var(--cream-2);border-left:4px solid var(--terracotta);border-radius:14px;
+    padding:18px 22px;margin:22px 0;font-family:'Fraunces',serif;font-style:italic;
+    font-size:1.1rem;color:var(--ink);line-height:1.5;
+  }
+  .modal-body .article .takeaway{
+    background:var(--sage-soft);border-radius:18px;padding:20px 24px;margin-top:26px;
+  }
+  .modal-body .article .takeaway b{display:block;font-family:'Fraunces',serif;color:#4f5d42;font-size:1.05rem;margin-bottom:6px;}
+  .modal-body .article .takeaway p{color:#5d6b4f;margin:0;font-size:.98rem;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .hero-art{order:-1;max-width:460px;margin:0 auto;}
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .pillars{grid-template-columns:repeat(2,1fr);}
+    .ritual-grid{grid-template-columns:1fr;gap:30px;}
+    .ritual-art{max-width:460px;margin:0 auto;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--cream);padding:20px 24px;gap:16px;border-bottom:2px solid var(--peach-soft);}
+  }
+  @media(max-width:560px){
+    .cards{grid-template-columns:1fr;}
+    .pillars{grid-template-columns:1fr;}
+    .mood{min-width:100%;}
+    .foot-grid{grid-template-columns:1fr;}
+    .trust{gap:22px;}
+    .modal-body{padding:24px 22px 30px;}
+    .modal-hero{height:190px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-in">
+    <div class="logo"><span class="badge">🏡</span> Solo&nbsp;&amp;&nbsp;Proud</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#stories">Stories</a>
+      <a href="#pillars">Pillars</a>
+      <a href="#ritual">Daily Ritual</a>
+      <a href="#join" class="nav-cta">Join the Cozy Club</a>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="pill">🌿 The art of living beautifully on your own</span>
+      <h1>Living alone, <span class="hl">never lonely.</span></h1>
+      <p class="lead">A warm little corner of the internet for people who live solo — and want to do it happily. Cook for one, keep your home safe, master your money, and treat yourself with the kindness you deserve.</p>
+      <div class="hero-btns">
+        <a href="#stories" class="btn btn-primary">Find a story for your mood 💌</a>
+        <a href="#ritual" class="btn btn-ghost">Try the daily ritual</a>
+      </div>
+      <div class="trust">
+        <div><b>120+</b><span>Cozy stories</span></div>
+        <div><b>4</b><span>Solo-life pillars</span></div>
+        <div><b>∞</b><span>Self-love, refilled daily</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="images/hero.png" alt="A happy woman living confidently and cozily alone in her warm apartment with plants and a cat" />
+      <div class="float f1">🍵 Tea for one, please</div>
+      <div class="float f2">🌙 You + your peace</div>
+    </div>
+  </div>
+</header>
+
+<!-- MOOD FILTER + STORIES -->
+<section id="stories">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">Story feed</span>
+      <h2>How are you feeling right now?</h2>
+      <p>Pick your mood and we'll surface the little stories and tips that fit you best today. No pressure, no judgement — just the right words at the right moment.</p>
+    </div>
+
+    <div class="mood-bar" id="moodBar">
+      <button class="mood active" data-mood="all"><span class="emo">🌈</span><span class="txt"><b>Show me all</b><small>Everything cozy</small></span></button>
+      <button class="mood" data-mood="motivation"><span class="emo">⚡</span><span class="txt"><b>Need motivation</b><small>Get me moving</small></span></button>
+      <button class="mood" data-mood="relax"><span class="emo">🛁</span><span class="txt"><b>Need to relax</b><small>Slow it down</small></span></button>
+      <button class="mood" data-mood="lonely"><span class="emo">🤍</span><span class="txt"><b>Feeling lonely</b><small>Hold my hand</small></span></button>
+    </div>
+
+    <div class="cards" id="cardGrid"></div>
+    <div class="empty" id="emptyState">No stories here yet — try another mood 🌷</div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section id="pillars" style="background:var(--cream-2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kicker">The four pillars</span>
+      <h2>Everything a solo home needs</h2>
+      <p>Living well alone is a skill — and like any skill, it gets easier and more joyful with practice. Here's where we focus.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ic">🍳</div>
+        <h3>Cooking for One</h3>
+        <p>Small-batch recipes, zero food waste, and meals that feel like a hug — even at a table for one.</p>
+      </div>
+      <div class="pillar">
+        <div class="ic">🔒</div>
+        <h3>Home Safety</h3>
+        <p>Simple habits and gentle gear so your space always feels secure, calm, and entirely yours.</p>
+      </div>
+      <div class="pillar">
+        <div class="ic">💰</div>
+        <h3>Solo Money</h3>
+        <p>Budgeting on one income, building a safety cushion, and spending guilt-free on what you love.</p>
+      </div>
+      <div class="pillar">
+        <div class="ic">🌸</div>
+        <h3>Self-Care</h3>
+        <p>Tiny rituals that refill your cup — because being your own best company is a beautiful thing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<section>
+  <div class="wrap">
+    <div class="quote-band">
+      <p>Solitude is not the absence of company — it's the presence of yourself, fully and warmly.</p>
+      <span>— a little reminder from the Cozy Club</span>
+    </div>
+  </div>
+</section>
+
+<!-- DAILY RITUAL -->
+<section id="ritual">
+  <div class="wrap ritual-grid">
+    <div class="ritual-art">
+      <img src="images/self-care.png" alt="Cozy self-care illustration with candles, plants and a warm bath" />
+    </div>
+    <div class="ritual-text">
+      <span class="kicker" style="color:var(--terracotta);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:.82rem;">Your tiny daily ritual</span>
+      <h2 style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.5rem);margin:8px 0 6px;color:var(--ink);">Five soft things, just for you</h2>
+      <p style="color:var(--ink-soft);">Tick them off as you go today. They're small on purpose — solo living is built one gentle, doable moment at a time. 🌼</p>
+      <ul class="checklist" id="checklist">
+        <li data-id="1"><span class="box"></span> Make your bed &amp; open a window</li>
+        <li data-id="2"><span class="box"></span> Cook (or plate) one real meal for yourself</li>
+        <li data-id="3"><span class="box"></span> Move your body for 10 minutes</li>
+        <li data-id="4"><span class="box"></span> Text one person you love</li>
+        <li data-id="5"><span class="box"></span> Do one thing purely because it's nice</li>
+      </ul>
+      <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="progress-label" id="progressLabel">0 of 5 done — every little bit counts 🌷</div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="join">
+  <div class="wrap">
+    <div class="news">
+      <h2>Join the Cozy Club 💌</h2>
+      <p>One warm letter a week: a recipe for one, a money tip, a self-care prompt, and a little encouragement. No spam — just a friend in your inbox.</p>
+      <form id="newsForm">
+        <input type="email" id="newsEmail" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-primary">Send me coziness</button>
+      </form>
+      <div class="ok" id="newsOk">🌷 You're in! Check your inbox for a warm hello.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE READER MODAL -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-hero">
+      <button class="modal-close" id="modalClose" aria-label="Close story">✕</button>
+      <img id="modalImg" src="" alt="" />
+      <div class="modal-meta">
+        <span class="m-tag" id="modalTag"></span>
+        <span class="m-mins" id="modalMins"></span>
+      </div>
+    </div>
+    <div class="modal-body">
+      <span class="m-mood" id="modalMood"></span>
+      <h2 class="m-title" id="modalTitle"></h2>
+      <div class="article" id="modalArticle"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="logo"><span class="badge" style="background:var(--terracotta);">🏡</span> Solo &amp; Proud</div>
+      <p>A cozy guide to living alone — happily, safely, and on your own beautiful terms.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="#stories">Story feed</a>
+      <a href="#pillars">The four pillars</a>
+      <a href="#ritual">Daily ritual</a>
+    </div>
+    <div class="foot-col">
+      <h4>Pillars</h4>
+      <a href="#pillars">Cooking for one</a>
+      <a href="#pillars">Home safety</a>
+      <a href="#pillars">Solo money</a>
+    </div>
+    <div class="foot-col">
+      <h4>Say hi</h4>
+      <a href="#join">Newsletter</a>
+      <a href="#">Instagram</a>
+      <a href="#">Pinterest</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">Made with 🤍 for everyone living beautifully on their own · © 2026 Solo &amp; Proud</div>
+</footer>
+
+<script>
+  /* ---------- STORY DATA (with full article bodies) ---------- */
+  const stories = [
+    {
+      mood:"motivation", moodLabel:"⚡ Motivation", tag:"Cooking", img:"images/cooking.png",
+      title:"The 20-minute 'me-meal' that started everything",
+      text:"How one tired solo evening and a single pan turned into a love affair with cooking just for myself — no leftovers guilt.",
+      mins:"5 min read",
+      body:`
+        <p>For the first year of living alone, "dinner" usually meant whatever could be eaten standing up over the sink — crackers, cereal, the back half of a takeaway container from two nights ago. Cooking felt like something you did <em>for</em> people: for a partner, for family, for guests you wanted to impress. And since the only person in my apartment was me, the maths never seemed to add up. Why dirty a pan and a plate, why plan a meal, why bother, for an audience of one?</p>
+        <p>Then one rainy Tuesday I was too tired and too broke to order in, the fridge held almost nothing, and out of pure necessity I made the simplest thing I knew how to make. Something quietly shifted that evening, and it has stayed shifted ever since.</p>
+        <h3>The meal that changed my mind</h3>
+        <p>One pan, four ingredients, twenty minutes: a glug of olive oil, a clove of garlic, a handful of whatever greens were wilting in the drawer, and a single egg cracked on top to finish. Nothing clever. But instead of eating it over the sink, I did three small things differently. I plated it properly, on a real plate. I sat down at the table. And I ate it slowly, without a screen.</p>
+        <p>For the first time, cooking didn't feel like a chore performed for an absent audience — it felt like a small, warm sentence I was saying to myself: <em>you're worth a real meal, even when no one's watching.</em> That sentence turned out to be the whole point.</p>
+        <h3>Why cooking for one is a gift, not a downgrade</h3>
+        <p>Once I stopped seeing solo cooking as a sad consolation prize, I started noticing it was actually full of quiet advantages most people sharing a kitchen never get:</p>
+        <ul>
+          <li>You answer to no one's taste but your own — extra garlic, no onions, pineapple on whatever you like. There is no committee to please.</li>
+          <li>Portions are easy to right-size, so there's almost no waste, no sad week-old leftovers slowly turning into a science experiment.</li>
+          <li>Twenty unhurried minutes at the stove is a tiny, daily form of self-care that happens to also produce dinner — a two-for-one deal on a hard day.</li>
+          <li>You build genuine skill fast, because every single meal is one <em>you</em> chose, cooked, and adjusted. The feedback loop is all yours.</li>
+        </ul>
+        <h3>My starter formula for any "me-meal"</h3>
+        <p>The trick that finally killed my fridge-staring paralysis was refusing to think in "recipes" and instead thinking in a simple formula. Pick one from each line, combine in a hot pan, and you'll have a real plate of food in well under half an hour:</p>
+        <ul>
+          <li><b>A base:</b> rice, pasta, noodles, a slice of good toasted bread, or just a couple of eggs.</li>
+          <li><b>A green:</b> spinach, broccoli, frozen peas, a handful of salad — frozen vegetables totally count and waste nothing.</li>
+          <li><b>A flavor hit:</b> garlic, chili flakes, a squeeze of lemon, soy sauce, grated cheese, or a spoon of pesto.</li>
+        </ul>
+        <p>That's it. Base + green + flavor. Some nights it becomes fried rice, some nights buttered pasta with greens, some nights eggs on toast that taste like a tiny restaurant. The formula never runs out, and it never asks more of you than you have to give.</p>
+        <h3>The mindset that makes it last</h3>
+        <p>The real shift wasn't culinary, it was emotional. I stopped treating myself like a houseguest I couldn't be bothered to feed, and started treating myself like someone worth a warm plate at the end of the day. Cooking for one became the most reliable way I have of saying <em>I've got you</em> to the only person who's guaranteed to be there for every dinner of my life.</p>
+        <blockquote>Cooking for one isn't settling for less. It's the freedom to make exactly what you want, exactly how you like it — and the quiet practice of treating yourself like good company.</blockquote>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>Tonight, make one warm thing in a single pan and eat it sitting down at a table, phone face-down. Don't aim for impressive — aim for <em>present</em>. That's the whole assignment.</p>
+        </div>`
+    },
+    {
+      mood:"motivation", moodLabel:"⚡ Motivation", tag:"Money", img:"images/finance.png",
+      title:"I automated my solo savings and finally relaxed",
+      text:"One income, one rule: pay yourself first. The tiny system that quietly built me a safety cushion in a year.",
+      mins:"7 min read",
+      body:`
+        <p>Living on a single income has one fact baked into it that couples and roommates never quite feel the same way: there's no one to split the rent with, no second paycheck waiting in the wings if yours stops. If the car breaks, it's your problem. If you get sick and can't work, it's your problem. For a long time that reality lived in my chest as a low, constant hum of anxiety — quiet enough to ignore most days, loud enough to wake me at 3am the night before a big bill landed.</p>
+        <p>The thing that finally quieted that hum wasn't a raise, and it wasn't some heroic act of budgeting discipline. It was building one small, boring, automatic system — and then more or less forgetting it existed. Here is exactly how I did it.</p>
+        <h3>The one rule that changed everything: pay yourself first</h3>
+        <p>The old way: spend through the month, then save whatever happens to be left over. The problem? Nothing was ever left over. There is <em>always</em> one more thing to spend on, and "whatever's left" reliably rounds down to zero.</p>
+        <p>The new way: the day my salary lands, a fixed amount moves into savings <em>before</em> I get a chance to touch it. Saving stopped being the leftover and became the first bill I pay each month — the bill to my own future. The order of operations was the entire trick.</p>
+        <h3>How I set it up in one quiet afternoon</h3>
+        <p>This isn't complicated and it doesn't require an app or a spreadsheet you'll abandon in three weeks. It took me one afternoon and a cup of tea:</p>
+        <ul>
+          <li><b>Open a separate savings account</b> — ideally at a different bank from your everyday one, so moving money back out takes an extra step. A little friction is your friend here.</li>
+          <li><b>Schedule an automatic transfer</b> for the day after payday. I started with just 5% of my income — deliberately small, an amount I genuinely didn't feel disappear.</li>
+          <li><b>Name the account something kind</b> like "Future Me's Safety Net." It sounds a little silly. It also works, because every time you see it you're reminded what the money is <em>for</em>.</li>
+          <li><b>Nudge the percentage up slowly</b> — every few months, or whenever a raise lands, bump it by one or two points. You adapt to it before you notice.</li>
+        </ul>
+        <h3>The three jars I quietly fill</h3>
+        <p>Over time the single savings account grew into three gentle buckets, each doing a different emotional job:</p>
+        <ul>
+          <li><b>Emergency cushion:</b> the headline goal is three months of essential expenses, built up slowly. This is the jar that buys real peace of mind — the one that means a surprise bill is an annoyance, not a crisis.</li>
+          <li><b>Sinking fund:</b> a little each month set aside for the predictable-but-irregular costs that always seem to "come out of nowhere" — annual insurance, a new laptop, the dentist, a flight home. They stop being emergencies once you've been quietly funding them all year.</li>
+          <li><b>Joy fund:</b> yes, savings explicitly for fun — a trip, a concert, a beautiful thing you want. Guilt-free spending only actually feels guilt-free when you've planned and funded it on purpose.</li>
+        </ul>
+        <h3>Why automation beats willpower every time</h3>
+        <p>The deepest lesson wasn't financial, it was about myself. I am not a person with bottomless discipline at the end of a long day, and it turns out I don't need to be. By making the responsible choice the <em>automatic</em> one, I removed willpower from the equation entirely. The system saves whether I'm motivated or exhausted, focused or distracted. My future got funded on my worst days as reliably as my best ones.</p>
+        <blockquote>A safety cushion isn't about being rich. It's about being able to sleep through the night knowing a surprise bill won't break you — and that quiet is worth more than almost anything you could buy.</blockquote>
+        <p>A year in, the hum in my chest is mostly gone. I didn't deprive myself or track every coffee. I just changed the order of operations once, on autopilot, and let small automatic transfers do what my anxious budgeting never could.</p>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>This week, set up one automatic transfer of any amount — even just the price of a coffee — into a separate savings account, timed for the day after payday. The amount barely matters. Starting the habit beats optimizing the numbers.</p>
+        </div>`
+    },
+    {
+      mood:"motivation", moodLabel:"⚡ Motivation", tag:"Home", img:"images/cozy-home.png",
+      title:"Sunday reset: 30 minutes to a home that loves you back",
+      text:"A gentle, repeatable routine that makes Monday-you feel cared for. Momentum, not perfection.",
+      mins:"4 min read",
+      body:`
+        <p>When you live alone, the home only resets if <em>you</em> reset it. There's no roommate who might do the dishes, no partner who folds the laundry while you're out. The whole place runs on a single engine, and that engine is you. For a while that felt heavy — proof that solo living was just more work with less help. Then I flipped the frame: there's also no one else's mess to clean up but my own, no one judging my process, and no one's standards to meet but mine. The Sunday reset became my way of handing Monday-me a home that already feels cared for, instead of one more thing to fix.</p>
+        <h3>The 30-minute reset, start to finish</h3>
+        <p>The magic is the structure. Thirty minutes, split into three ten-minute blocks, each with a single clear job. You're not deciding what to do — you're just following the blocks:</p>
+        <ul>
+          <li><b>Minutes 0–10 — Surfaces:</b> clear every flat surface in the main rooms. Dishes go to the sink, stray clutter goes into one basket to deal with later, loose post goes into a single pile. Don't organise yet — just clear.</li>
+          <li><b>Minutes 10–20 — Reset zones:</b> tackle the three spots your eyes actually land on. Wipe the kitchen counter, make the bed, fluff and straighten the couch. These three make the whole place <em>read</em> as tidy even if the closets are chaos.</li>
+          <li><b>Minutes 20–30 — Set up the week:</b> shift from cleaning to kindness-to-future-you. Start one load of laundry, refill your water bottle, lay out tomorrow's clothes, glance at your calendar so Monday holds no ambushes.</li>
+        </ul>
+        <h3>The mindset that makes it stick</h3>
+        <p>The single most important thing to understand: this is <em>not</em> deep cleaning. It is momentum, not perfection. You set a timer for thirty minutes, put on a playlist you love, and make one firm rule — whatever isn't finished when the timer rings is simply a job for next week. No guilt, no spiralling into a four-hour deep clean. Done-and-imperfect, repeated every week, beats perfect-and-never every single time.</p>
+        <p>Because it's short and bounded, the reset is sustainable in a way that "I'll clean the whole apartment this weekend" never was. Thirty minutes once a week is small enough that I actually do it, and that consistency is what keeps the place from ever sliding into the overwhelming territory that takes a whole lost Saturday to dig out of.</p>
+        <blockquote>You're not cleaning for guests who might come. You're setting the stage for the one person who lives here every day — and who deserves a soft landing on Monday morning.</blockquote>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>This Sunday, set a timer for just 10 minutes and clear surfaces only — nothing else. If you feel like continuing, wonderful. If you stop at ten, you still handed Monday-you a calmer home. You win either way.</p>
+        </div>`
+    },
+    {
+      mood:"relax", moodLabel:"🛁 Relax", tag:"Self-care", img:"images/self-care.png",
+      title:"The slow bath ritual I protect like a tiny holiday",
+      text:"Candles, a playlist, and zero phone. Why dedicating one evening a week to nothing at all changed my whole mood.",
+      mins:"5 min read",
+      body:`
+        <p>Here is one of the genuinely underrated joys of living alone, the kind nobody warns you about: the bathroom is entirely yours, the evening is entirely yours, and nobody is waiting for the hot water or knocking on the door. There's no negotiating, no compromise, no one to feel self-conscious in front of. I started treating one night a week as a tiny private holiday — a standing appointment with stillness — and it quickly became the one thing on my calendar I cancel least.</p>
+        <h3>Setting the scene (the part that matters most)</h3>
+        <p>The water is honestly the least important ingredient. What turns an ordinary wash into a ritual is the atmosphere you build around it, and that comes down to a handful of small, deliberate choices:</p>
+        <ul>
+          <li><b>Light:</b> two or three candles, overhead light firmly off. Soft, low light is a primal signal to your nervous system that the day is closing and it's safe to power down.</li>
+          <li><b>Sound:</b> a slow playlist, gentle rain sounds, or a crackling-fire track — anything without lyrics you'll catch yourself analysing. The goal is a soundscape, not entertainment.</li>
+          <li><b>Scent:</b> a few drops of lavender or eucalyptus oil, or a bath salt whose smell you genuinely love. Scent reaches the calm part of your brain faster than any thought.</li>
+          <li><b>The big rule:</b> phone in another room. This is the one non-negotiable. The whole ritual collapses the instant the world can reach you. No exceptions, no "just checking one thing."</li>
+        </ul>
+        <h3>Why "doing nothing" is actually doing something important</h3>
+        <p>Solo life has a sneaky way of filling up with low-grade busyness. Because you run the entire household, there is always one more thing to tidy, one more message to reply to, one more small task to plan. The mental engine never fully switches off, and you can go weeks bracing without realising it. A protected hour of warmth and stillness is how I tell my body, in a language it understands, <em>you can stop bracing now — nothing here needs you for the next hour.</em></p>
+        <p>That hour isn't indulgent and it isn't a treat I have to earn. It's maintenance, the same way sleep and food are maintenance. It's the regular, scheduled point where the tension I've been quietly carrying gets a chance to drain out before it builds into something heavier.</p>
+        <blockquote>Rest isn't a reward you earn after finishing everything. It's the thing that makes it possible to finish anything at all.</blockquote>
+        <h3>No bathtub? The ritual still travels</h3>
+        <p>You do not need a tub for any of this. The exact same magic works with a long hot shower, a face mask, and ten minutes afterwards wrapped in a towel doing absolutely nothing. It works with a basin of hot water and your feet in it. The water was never the point — the point is the deliberate permission to pause, given to yourself, on purpose, on a schedule.</p>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>Pick one evening this week and put it in your calendar like a real appointment. Put your phone in another room for thirty minutes and do one warm, slow thing — bath, shower, or just feet in hot water. Protect that half hour fiercely, because it is, in fact, an appointment with the person who matters most.</p>
+        </div>`
+    },
+    {
+      mood:"relax", moodLabel:"🛁 Relax", tag:"Home", img:"images/cozy-home.png",
+      title:"Building a 'soft corner' in a small apartment",
+      text:"One chair, one lamp, one blanket. How a single cozy nook makes a whole solo home feel safe and yours.",
+      mins:"4 min read",
+      body:`
+        <p>You don't need a big apartment to feel deeply at home in it — you need one single spot that feels unmistakably, warmly <em>yours</em>. I call mine the soft corner. It's barely a square metre tucked beside a window, and it honestly does more for my mood and sense of safety than any amount of extra square footage ever could. When you live alone, your home is also your entire support system, your decompression chamber, your refuge from a long day. A soft corner is the beating heart of that refuge.</p>
+        <h3>The three ingredients of a soft corner</h3>
+        <p>You can build one tonight with things you almost certainly already own. It only takes three elements, and none of them need to be expensive:</p>
+        <ul>
+          <li><b>One comfortable seat:</b> an armchair, a beanbag, a floor cushion, or simply the end of your bed with a couple of pillows propped against the wall. The only requirement is that it quietly invites you to stay a while.</li>
+          <li><b>One warm light:</b> a small lamp with a soft, warm-toned bulb, placed off to the side at roughly shoulder height. Never the harsh overhead light. Warm, low light is the single fastest way to make any space feel held rather than clinical.</li>
+          <li><b>One texture you love:</b> a chunky knit blanket, a sheepskin, a worn-soft throw — something your hands instinctively want to reach out and touch. Comfort is partly physical, and your skin keeps score.</li>
+        </ul>
+        <h3>Make it a destination, not a default</h3>
+        <p>Here's the part most people miss: the magic lives in the ritual, not the furniture. My soft corner is where I read, where I drink my morning coffee, where I sit with tea when a day has been a lot. Crucially, it's where I only ever do <em>calm</em> things — never work, never stressful phone calls, never doom-scrolling. Because I've kept it that way, my body has learned the association completely. I relax the moment I sink in. The corner itself has become a cue, a physical anchor that tells my nervous system: <em>we're safe here, we can let go now.</em></p>
+        <blockquote>A home doesn't have to be big to be a sanctuary. It just needs one corner that always, reliably says: you can exhale here.</blockquote>
+        <h3>The finishing touches that make it yours</h3>
+        <p>Once the three essentials are in place, round it out with small personal touches that say <em>a person who is loved lives here</em> — even though that person is you, loving yourself. A trailing plant, a candle, a small stack of the books you actually want to read, a framed photo of people or places you adore. These little objects do quiet emotional work, reminding you every time you glance over that this small kingdom is entirely, unapologetically your own.</p>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>Tonight, find one chair, add one soft blanket and one warm lamp beside it. Sit there for ten quiet minutes with no screen. That's it — your soft corner is officially started, and it'll only get cosier from here.</p>
+        </div>`
+    },
+    {
+      mood:"relax", moodLabel:"🛁 Relax", tag:"Cooking", img:"images/cooking.png",
+      title:"Tea for one: a 5-minute calm-down recipe",
+      text:"Not really about the tea. A tiny warm ritual to bookend a busy day and tell your nervous system it's safe now.",
+      mins:"3 min read",
+      body:`
+        <p>This is the smallest ritual in my entire solo-living toolkit, and somehow the one I lean on most. It takes barely five minutes, costs almost nothing, and works <em>precisely because</em> it asks so little of you — which is exactly what you need on the days you have nothing left to give. When you live alone, there's no one to make you a cup of something warm on a hard evening. So this is me learning to be that person for myself.</p>
+        <h3>The recipe (it's barely a recipe)</h3>
+        <p>The instructions are almost laughably simple, but each step is doing quiet work, so resist the urge to rush them:</p>
+        <ul>
+          <li>Boil the kettle. While it heats, do nothing else — don't reach for your phone, don't start a task. Just stand there and let it build to a whistle. The waiting is part of it.</li>
+          <li>Choose a cup you genuinely like holding. The heavy one, the one with the chip you've grown fond of, the one that fits your hands. The vessel matters more than you'd think.</li>
+          <li>Pour, then wait the full few minutes for it to steep. Don't hurry it along. This patient waiting <em>is</em> the ritual, not an obstacle to it.</li>
+          <li>Sit somewhere soft and drink it slowly, both hands wrapped around the cup, feeling the warmth move into your palms.</li>
+        </ul>
+        <h3>Why such a tiny thing works so well</h3>
+        <p>It's not about the caffeine at all — herbal or decaf is honestly perfect, especially in the evening. What you're really making is a deliberate <em>seam</em> in the day: a clear, physical signal to your nervous system that the busy, switched-on part is over, and it's safe to soften now. The warmth radiating into your hands, the enforced pause, the single quiet point of focus — strip away the leaves and the water and what you're left with is a two-minute meditation wearing a very convincing disguise as a hot drink.</p>
+        <p>That's the secret of the smallest rituals: they slip past the part of you that resists "self-care" as one more chore. Nobody's too tired or too cynical to make a cup of tea. And in the making and the slow drinking, something in you gets to rest.</p>
+        <blockquote>Sometimes self-care isn't a grand gesture or an expensive routine. It's one warm cup, held slowly, with your full and undivided attention.</blockquote>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>Next time you notice yourself wound tight, make one cup of something warm and drink it with zero multitasking — no phone, no TV, no scrolling. Just five minutes and the cup. That's the entire practice, and it's always available to you.</p>
+        </div>`
+    },
+    {
+      mood:"lonely", moodLabel:"🤍 Lonely", tag:"Self-care", img:"images/lonely.png",
+      title:"On the evenings the quiet feels too loud",
+      text:"A gentle, honest letter for the lonelier nights — and the small, real things that helped me feel held again.",
+      mins:"6 min read",
+      body:`
+        <p>Let's be honest about the part of solo living that the cheerful posts and aesthetic videos quietly skip over: some evenings, the quiet gets <em>loud</em>. The apartment feels too still. The whole day feels unwitnessed, like it happened to no one. And a small, specific ache sets in that has nothing to do with whether you <em>chose</em> this life or how much you usually love it. If that's tonight for you — this letter is for you, and I want to say the most important thing first. Nothing is wrong with you.</p>
+        <h3>First, let it be true</h3>
+        <p>Loneliness is not a failure of independence, and it's certainly not proof you're "bad at" living alone. It's simply a signal — the same way hunger or tiredness is a signal — that you are a human being wired, at the deepest biological level, for connection. You can genuinely love your solo life <em>and</em> feel lonely sometimes. Both of those things are allowed to be completely true at the same moment. They don't cancel each other out.</p>
+        <p>One of the gentlest, most surprisingly effective things you can do is simply to name it, softly and without judgement: "I'm feeling lonely right now." Said plainly, almost kindly, it loses a startling amount of its weight. The feeling stops being a vague heavy fog and becomes a thing you're noticing — and things you can notice are things you can tend to.</p>
+        <h3>The small, real things that actually help me</h3>
+        <p>None of these are cures, and none of them are required. They're just the small, doable moves that, on the lonelier nights, reliably turn the volume of the quiet back down for me:</p>
+        <ul>
+          <li><b>Reach out first, low-stakes:</b> send a meme, a two-line voice note, a simple "thinking of you." You don't need a reason, an agenda, or the energy for a whole conversation. A tiny signal of connection counts, fully.</li>
+          <li><b>Borrow some human warmth:</b> put on a comfort show you've seen ten times, a podcast with chatty hosts who feel like friends, a livestream. Friendly human voices filling the room genuinely soothe the nervous system — it's not "sad," it's smart.</li>
+          <li><b>Do one thing with your hands:</b> cook something simple, tidy a drawer, water the plants, fold laundry. Gentle, rhythmic motion helps the feeling move <em>through</em> you instead of pooling and stagnating.</li>
+          <li><b>Go where the people are:</b> a café, a walk past a busy street, a late-evening grocery run. You don't have to talk to anyone at all — just being near the warm hum of other humans existing can take the edge off the stillness.</li>
+        </ul>
+        <h3>Be tender with yourself, not strategic</h3>
+        <p>On these nights, the goal isn't to "fix" the loneliness as fast as possible or to scold yourself for feeling it. The goal is just to be kind company to yourself while it passes — and it does pass. You'd comfort a friend who told you they felt this way; you'd never tell them they were doing life wrong. Extend yourself that exact same warmth.</p>
+        <blockquote>Feeling lonely doesn't mean you're doing solo life wrong. It means you're alive and open-hearted — and tonight you just need a little warmth, which you are allowed to go and find.</blockquote>
+        <p>One honest caveat, offered gently: if the heaviness lingers for weeks rather than an evening, if it stops lifting at all, that's worth taking seriously and tenderly. Talking to someone you trust, or to a professional, is its own genuine form of self-care — a sign of self-respect, never a defeat.</p>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>Right now, send one tiny message to one person — no agenda, no apology for having been quiet lately. Just "hey, you crossed my mind." Connection almost always starts with a single, imperfect, slightly awkward hello.</p>
+        </div>`
+    },
+    {
+      mood:"lonely", moodLabel:"🤍 Lonely", tag:"Connection", img:"images/lonely.png",
+      title:"How to feel connected without leaving the house",
+      text:"From a 2-minute voice note to a standing 'parallel' video call — low-effort ways to feel close to people you love.",
+      mins:"5 min read",
+      body:`
+        <p>Some nights you crave connection but have absolutely zero energy to get dressed, travel across town, or perform the social, bubbly version of yourself. That combination — wanting closeness while having nothing left in the social tank — is one of the trickiest parts of living alone. The good news, which took me embarrassingly long to learn, is that real closeness does not require leaving your couch. These are the low-effort, high-warmth ways I stay genuinely woven into the lives of the people I love, entirely from home and in my softest clothes.</p>
+        <h3>Voice notes: the most underrated love language</h3>
+        <p>A two-minute voice note carries something a text simply can't: tone, laughter, the small hesitations, the actual living sound of a person. I record them on the walk from the sofa to the kitchen, completely unscripted, often mid-thought. Hearing a friend's voice in my ear — and knowing they'll hear mine — shrinks the distance between us instantly, in a way no perfectly typed message ever does. And the beauty of it is there's no pressure to reply in real time; you trade these little audio postcards whenever each of you has a spare minute.</p>
+        <h3>Parallel hangouts: together, but separately</h3>
+        <p>This was the real unlock for me. You don't need a "proper" activity to be together — you can simply exist near each other, doing your own things:</p>
+        <ul>
+          <li><b>Body-double calls:</b> hop on a video call and each just do your own thing — cooking, folding laundry, working, tidying. It's company without any obligation to entertain or even talk much. Just two people, quietly keeping each other company.</li>
+          <li><b>Watch parties:</b> stream the same show or film at the same time with a shared chat open, or a sync app. It becomes a standing "date" that asks nothing of you except showing up in pyjamas.</li>
+          <li><b>Phone-call walks:</b> call someone and you both walk around your own separate neighbourhoods while you talk. Movement plus conversation is, hands down, the easiest and most natural closeness there is — it barely feels like effort at all.</li>
+        </ul>
+        <h3>Make it a standing thing</h3>
+        <p>Here's the deeper trick that ties it all together: remove the decision. The hardest part of connecting on a low-energy day isn't the connecting itself — it's summoning the will to <em>initiate</em> it. So I stopped relying on initiation. A recurring Sunday evening call, a daily good-morning text thread that just hums along, a monthly online game night on the calendar — when connection is pre-scheduled, it simply arrives on its own. You don't have to be the one to reach out from a flat place; the structure does the reaching for you.</p>
+        <blockquote>Connection isn't about how often you're in the same physical room. It's about how reliably you keep showing up for each other — even, especially, from your own couch.</blockquote>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>Send one voice note today instead of a text — even just a ten-second "hey, you popped into my head." Or, braver still, propose one standing weekly call with someone you miss, and let the schedule carry the friendship on the days you're tired.</p>
+        </div>`
+    },
+    {
+      mood:"lonely", moodLabel:"🤍 Lonely", tag:"Home", img:"images/cozy-home.png",
+      title:"Making 'home alone' feel cozy, not empty",
+      text:"Light, sound, scent and small living things. The four senses that turn a silent room into good company.",
+      mins:"5 min read",
+      body:`
+        <p>Here's something that took me years to truly understand: an empty-<em>feeling</em> home and a cosy, alive one can be the exact same square footage, the exact same furniture, the exact same address. The entire difference between them is almost purely sensory. So when the silence starts to feel hollow rather than peaceful, I've stopped trying to fix it by filling the space with people. Instead, I fill it with gentle sensory signals that quietly tell my brain: <em>this is a living, loved, inhabited place.</em> Here are the four that work for me every single time, in order of how fast they act.</p>
+        <h3>1. Light — chase away the flat, institutional silence</h3>
+        <p>Harsh overhead lighting makes a room feel like a waiting area or an office after hours — functional, but emotionally cold. The single fastest fix is to switch it off entirely and turn on two or three small warm-toned lamps scattered in different corners. Layered, low, golden light instantly transforms a space from "stark and empty" to "inhabited and held." It's the difference between a room you happen to be in and a room that feels like it's gently holding you.</p>
+        <h3>2. Sound — fill the quiet on purpose, not by accident</h3>
+        <p>Silence is wonderful when you choose it and oppressive when it just descends. So choose your soundscape deliberately:</p>
+        <ul>
+          <li>A low, easy playlist, a podcast with warm chatty hosts, or one of those "ambient" background videos full of murmured conversation and clinking coffee cups.</li>
+          <li>Soft nature sounds — steady rain, a crackling fireplace, distant waves — that make a room feel alive and accompanied without ever demanding your attention or focus.</li>
+        </ul>
+        <p>The goal isn't noise for its own sake; it's the comforting texture of a world that's awake around you.</p>
+        <h3>3. Scent — the fastest mood-shifter there is</h3>
+        <p>This one is almost like a cheat code. A lit candle, a stick of incense, cinnamon simmering on the stove, a fresh pot of coffee. Scent is wired directly into the emotional, memory-laden part of the brain — it gets there <em>before</em> conscious thought does. A home that genuinely <em>smells</em> warm and cared-for reads as warm and cared-for before you've even sat down or thought about it.</p>
+        <h3>4. Small living things — quiet company that needs you back</h3>
+        <p>A couple of leafy plants, a vase of fresh flowers, a small aquarium, or — if your life and lease allow — a pet. Tending to something that's alive gives your day a gentle rhythm and gives the space an actual heartbeat. There's a quiet reciprocity to it: you're caring for something living, and in return the room feels less like an empty box and more like a small shared ecosystem. You're needed, and that need is its own soft form of company.</p>
+        <blockquote>An empty room and a cosy one are exactly the same size. The only real difference is the warmth you deliberately choose to bring into it.</blockquote>
+        <div class="takeaway">
+          <b>Tiny first step 🌿</b>
+          <p>Tonight, do just one thing: turn off the overhead light, switch on a single warm lamp, and put on something with gentle background sound. Then sit down and notice — genuinely notice — how much less empty the very same room suddenly feels.</p>
+        </div>`
+    },
+  ];
+
+  const grid = document.getElementById('cardGrid');
+  const empty = document.getElementById('emptyState');
+
+  function render(mood){
+    grid.innerHTML = "";
+    const list = mood === "all" ? stories : stories.filter(s => s.mood === mood);
+    empty.style.display = list.length ? "none" : "block";
+    list.forEach((s,i)=>{
+      const idx = stories.indexOf(s);
+      const c = document.createElement('article');
+      c.className = "card";
+      c.innerHTML = `
+        <div class="ph"><span class="tag">${s.tag}</span><img src="${s.img}" alt="${s.title}" loading="lazy"/></div>
+        <div class="body">
+          <span class="moodtag">${s.moodLabel}</span>
+          <h3>${s.title}</h3>
+          <p>${s.text}</p>
+          <div class="foot">
+            <span class="read" data-idx="${idx}">Read story →</span>
+            <span class="mins">${s.mins}</span>
+          </div>
+        </div>`;
+      c.querySelector('.read').addEventListener('click', ()=>openStory(idx));
+      grid.appendChild(c);
+      setTimeout(()=>c.classList.add('show'), 60*i + 40);
+    });
+  }
+  render("all");
+
+  document.getElementById('moodBar').addEventListener('click', e=>{
+    const btn = e.target.closest('.mood');
+    if(!btn) return;
+    document.querySelectorAll('.mood').forEach(m=>m.classList.remove('active'));
+    btn.classList.add('active');
+    render(btn.dataset.mood);
+  });
+
+  /* ---------- ARTICLE READER MODAL ---------- */
+  const overlay = document.getElementById('modalOverlay');
+  function openStory(idx){
+    const s = stories[idx];
+    document.getElementById('modalImg').src = s.img;
+    document.getElementById('modalImg').alt = s.title;
+    document.getElementById('modalTag').textContent = s.tag;
+    document.getElementById('modalMins').textContent = s.mins;
+    document.getElementById('modalMood').textContent = s.moodLabel;
+    document.getElementById('modalTitle').textContent = s.title;
+    document.getElementById('modalArticle').innerHTML = s.body;
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    overlay.scrollTop = 0;
+  }
+  function closeStory(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modalClose').addEventListener('click', closeStory);
+  overlay.addEventListener('click', e=>{ if(e.target === overlay) closeStory(); });
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape' && overlay.classList.contains('open')) closeStory(); });
+
+  /* ---------- CHECKLIST ---------- */
+  const checklist = document.getElementById('checklist');
+  const bar = document.getElementById('progressBar');
+  const label = document.getElementById('progressLabel');
+  const msgs = ["every little bit counts 🌷","nice start, keep going 🌿","you're halfway, lovely 🍵","almost there, proud of you ✨","all done — what a gentle day 🤍"];
+  checklist.addEventListener('click', e=>{
+    const li = e.target.closest('li');
+    if(!li) return;
+    li.classList.toggle('done');
+    const box = li.querySelector('.box');
+    box.textContent = li.classList.contains('done') ? "✓" : "";
+    const done = checklist.querySelectorAll('li.done').length;
+    bar.style.width = (done/5*100)+"%";
+    label.textContent = `${done} of 5 done — ${msgs[done]||msgs[0]}`;
+  });
+
+  /* ---------- NEWSLETTER ---------- */
+  document.getElementById('newsForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    document.getElementById('newsOk').style.display = "block";
+    document.getElementById('newsEmail').value = "";
+  });
+
+  /* ---------- MOBILE NAV ---------- */
+  document.getElementById('burger').addEventListener('click', ()=>{
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{
+    document.getElementById('navLinks').classList.remove('open');
+  }));
+</script>
+</body>
+</html>
